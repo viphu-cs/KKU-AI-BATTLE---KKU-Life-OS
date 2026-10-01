@@ -1,4 +1,4 @@
-#การแข่งขัน KKU AI Battle & Hackathon Pitching 2026 
+การแข่งขัน KKU AI Battle & Hackathon Pitching 2026 
 
 แข่งในหัวข้อ KKU SuperApp
 
