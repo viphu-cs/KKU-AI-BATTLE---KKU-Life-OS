@@ -1,0 +1,6 @@
+{
+  "name": "KKU LifeOS",
+  "description": "Personal Student Operating System for KKU students. One place to manage your daily tasks, team projects, and important campus announcements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

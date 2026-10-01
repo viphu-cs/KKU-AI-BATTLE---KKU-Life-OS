@@ -1,0 +1,127 @@
+{
+  "entities": {
+    "Task": {
+      "title": "Task",
+      "description": "Student tasks and homework assignments",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the assignment"
+        },
+        "course": {
+          "type": "string",
+          "description": "Course name or course code"
+        },
+        "deadline": {
+          "type": "string",
+          "description": "Deadline in YYYY-MM-DD format"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["High", "Medium", "Low"],
+          "description": "Priority level"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "completed"],
+          "description": "Status of completion"
+        },
+        "createdAt": {
+          "type": "integer",
+          "description": "Timestamp when the task was created"
+        }
+      },
+      "required": ["title", "course", "deadline", "priority", "status", "createdAt"]
+    },
+    "Team": {
+      "title": "Team",
+      "description": "Project groups formed by students",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Name of the group project/team"
+        },
+        "course": {
+          "type": "string",
+          "description": "Course associated with the project"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of requirements or project objectives"
+        },
+        "currentMembers": {
+          "type": "integer",
+          "description": "Number of current students in the team"
+        },
+        "maxMembers": {
+          "type": "integer",
+          "description": "Maximum allowed students in the team"
+        },
+        "owner": {
+          "type": "string",
+          "description": "Name of the team creator"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["open", "full"],
+          "description": "Availability for joining"
+        },
+        "createdAt": {
+          "type": "integer",
+          "description": "Timestamp when the team was created"
+        }
+      },
+      "required": ["title", "course", "description", "currentMembers", "maxMembers", "owner", "status", "createdAt"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Academic notices or campus events",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Headline of notice"
+        },
+        "description": {
+          "type": "string",
+          "description": "Full text of announcement"
+        },
+        "category": {
+          "type": "string",
+          "description": "Notice category (e.g., Academic, Competition, Campus Life)"
+        },
+        "isImportant": {
+          "type": "boolean",
+          "description": "Whether this is a featured high priority notice"
+        },
+        "createdAt": {
+          "type": "integer",
+          "description": "Timestamp when published"
+        }
+      },
+      "required": ["title", "description", "category", "isImportant", "createdAt"]
+    }
+  },
+  "firestore": {
+    "tasks": {
+      "schema": {
+        "$ref": "#/entities/Task"
+      },
+      "description": "Collection of tasks for students"
+    },
+    "teams": {
+      "schema": {
+        "$ref": "#/entities/Team"
+      },
+      "description": "Collection of team groups for assignments"
+    },
+    "announcements": {
+      "schema": {
+        "$ref": "#/entities/Announcement"
+      },
+      "description": "Collection of university announcements and feeds"
+    }
+  }
+}
